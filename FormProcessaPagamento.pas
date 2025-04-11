@@ -48,11 +48,21 @@ implementation
 {$R *.dfm}
 
 procedure TfrmPrincipalTerminal.FormActivate(Sender: TObject);
+//var
+//  FStompClientSend: IStompClient;
 begin
   serverIp := '192.168.0.150';
   serverUser := 'admin';
   serverPass := '123';
   queuePath := '/queue/ProcessarPagamento';
+
+  //FStompClientSend := StompUtils.StompClient;
+  //FStompClientSend.SetHost(serverIp);
+  //FStompClientSend.SetUserName(serverUser);
+  //FStompClientSend.SetPassword(serverPass);
+  //FStompClientSend.Connect;
+  //FStompClientSend.Send(queuePath, '{"codOperadora": "12"}');
+
 
   InicializarTerminal;
 end;
